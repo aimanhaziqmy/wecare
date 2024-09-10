@@ -563,7 +563,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Ethiopian Natural',
+                                      'Lake Run',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
