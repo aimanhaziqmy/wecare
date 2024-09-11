@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -34,26 +35,6 @@ class _LoginWidgetState extends State<LoginWidget>
     _model.passwordFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'containerOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          ScaleEffect(
-            curve: Curves.bounceOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.6, 1.0),
-            end: const Offset(1.0, 1.0),
-          ),
-        ],
-      ),
       'textOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -146,8 +127,8 @@ class _LoginWidgetState extends State<LoginWidget>
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    FlutterFlowTheme.of(context).primary,
-                    FlutterFlowTheme.of(context).error,
+                    const Color(0xB64B39EF),
+                    const Color(0x77249689),
                     FlutterFlowTheme.of(context).tertiary
                   ],
                   stops: const [0.0, 0.5, 1.0],
@@ -173,23 +154,27 @@ class _LoginWidgetState extends State<LoginWidget>
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 100.0,
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent4,
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
+                    Flexible(
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.animation,
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 44.0,
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+                        child: GradientText(
+                          'SayHeart',
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                fontFamily: 'Inter Tight',
+                                letterSpacing: 0.0,
+                              ),
+                          colors: [
+                            FlutterFlowTheme.of(context).success,
+                            FlutterFlowTheme.of(context).primary
+                          ],
+                          gradientDirection: GradientDirection.ltr,
+                          gradientType: GradientType.linear,
                         ),
                       ),
-                    ).animateOnPageLoad(
-                        animationsMap['containerOnPageLoadAnimation']!),
+                    ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
@@ -204,7 +189,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         child: Text(
                           'Sign In',
                           style: FlutterFlowTheme.of(context)
-                              .headlineSmall
+                              .displaySmall
                               .override(
                                 fontFamily: 'Inter Tight',
                                 letterSpacing: 0.0,

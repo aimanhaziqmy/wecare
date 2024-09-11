@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'splash_screen_model.dart';
 export 'splash_screen_model.dart';
 
@@ -44,12 +45,25 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  GradientText(
+                    'SayHeart',
+                    style: FlutterFlowTheme.of(context).displayMedium.override(
+                          fontFamily: 'Inter Tight',
+                          letterSpacing: 0.0,
+                        ),
+                    colors: [
+                      FlutterFlowTheme.of(context).primary,
+                      FlutterFlowTheme.of(context).secondary
+                    ],
+                    gradientDirection: GradientDirection.ltr,
+                    gradientType: GradientType.linear,
+                  ),
                   Container(
                     width: 100.0,
                     height: 60.0,
                     decoration: const BoxDecoration(),
                     child: Text(
-                      'WeCare.ai\nPowered By',
+                      '\nPowered By',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Inter Tight',
@@ -80,11 +94,12 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
                     height: 100.0,
                     decoration: const BoxDecoration(),
                     child: Text(
-                      'Upgrade your healthy lifestyle with the help of WeCare.ai empowered by Huawei Technology',
+                      'Upgrade your healthy lifestyle with the help of SayHeart empowered by Huawei Technology',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             fontFamily: 'Inter',
                             letterSpacing: 0.0,
+                            fontStyle: FontStyle.italic,
                           ),
                     ),
                   ),

@@ -55,6 +55,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => const HomePageWidget(),
+        ),
+        FFRoute(
+          name: 'Profile',
+          path: '/profile',
+          builder: (context, params) => const ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'RecommendedExercise',
+          path: '/recommendedExercise',
+          builder: (context, params) => const RecommendedExerciseWidget(),
+        ),
+        FFRoute(
+          name: 'FoodRecommendation',
+          path: '/foodRecommendation',
+          builder: (context, params) => const FoodRecommendationWidget(),
+        ),
+        FFRoute(
+          name: 'HealthStatus',
+          path: '/healthStatus',
+          builder: (context, params) => const HealthStatusWidget(),
+        ),
+        FFRoute(
+          name: 'DevicesList',
+          path: '/devicesList',
+          builder: (context, params) => const DevicesListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

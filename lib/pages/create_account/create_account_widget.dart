@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'create_account_model.dart';
 export 'create_account_model.dart';
 
@@ -83,14 +84,20 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 32.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'WeCare.ai',
+                            child: GradientText(
+                              'SayHeart',
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
                                     fontFamily: 'Inter Tight',
                                     letterSpacing: 0.0,
                                   ),
+                              colors: [
+                                FlutterFlowTheme.of(context).primary,
+                                FlutterFlowTheme.of(context).secondary
+                              ],
+                              gradientDirection: GradientDirection.ltr,
+                              gradientType: GradientType.linear,
                             ),
                           ),
                         ),
